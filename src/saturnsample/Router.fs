@@ -13,7 +13,7 @@ let browser = pipeline {
 }
 
 let defaultView = router {
-    get "/" (htmlView Index.layout)
+    get "/" (fun next ctx -> htmlView (Index.layout ctx) next ctx)
     get "/index.html" (redirectTo false "/")
     get "/default.html" (redirectTo false "/")
 }
@@ -41,5 +41,6 @@ let browserRouter = router {
 
 let appRouter = router {
     // forward "/api" apiRouter
+    forward "/books" Books.Controller.resource
     forward "" browserRouter
 }

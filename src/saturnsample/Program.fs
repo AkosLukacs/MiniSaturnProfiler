@@ -2,6 +2,8 @@ module Server
 
 open Saturn
 open Config
+open Microsoft.Extensions.DependencyInjection
+open Microsoft.AspNetCore.Builder
 
 let endpointPipe = pipeline {
     plug head
@@ -18,6 +20,24 @@ let app = application {
     use_static "static"
     use_gzip
     use_config (fun _ -> {connectionString = "DataSource=database.sqlite"} ) //TODO: Set development time configuration
+
+    app_config(fun app ->
+        printfn "@app_config..."
+
+        app.UseMiniProfiler() |> ignore
+        app
+    )
+    service_config(fun services ->
+        printfn "@service_config..."
+
+        // required by Miniprofiler in-memory storage
+        services.AddMemoryCache() |> ignore
+        services.AddMiniProfiler() |> ignore
+
+        services
+    )
+
+
 }
 
 [<EntryPoint>]

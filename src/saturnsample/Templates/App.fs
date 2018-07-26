@@ -1,8 +1,12 @@
 module App
 
 open Giraffe.GiraffeViewEngine
+open StackExchange.Profiling
+open Microsoft.AspNetCore.Http
 
-let layout (content: XmlNode list) =
+// let layout (content: XmlNode list) =
+let layout (content: XmlNode list) (ctx : HttpContext) =
+    let mp = MiniProfiler.Current.RenderIncludes(ctx)
     html [_class "has-navbar-fixed-top"] [
         head [] [
             meta [_charset "utf-8"]
@@ -44,6 +48,7 @@ let layout (content: XmlNode list) =
                     ]
                 ]
             ]
+            yield rawText mp.Value
             yield script [_src "/app.js"] []
         ]
     ]
