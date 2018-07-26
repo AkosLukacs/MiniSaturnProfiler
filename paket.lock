@@ -23,7 +23,7 @@ NUGET
       FSharp.Core (>= 4.2.3) - restriction: >= netcoreapp2.0
       Http.fs (>= 5.1.1) - restriction: >= netcoreapp2.0
       Microsoft.NETCore.App (>= 2.0) - restriction: >= netcoreapp2.0
-    FSharp.Core (4.5)
+    FSharp.Core (4.5.1)
       System.Collections (>= 4.0.11) - restriction: && (< net45) (>= netstandard1.6) (< netstandard2.0)
       System.Console (>= 4.0) - restriction: && (< net45) (>= netstandard1.6) (< netstandard2.0)
       System.Diagnostics.Debug (>= 4.0.11) - restriction: && (< net45) (>= netstandard1.6) (< netstandard2.0)
@@ -495,7 +495,7 @@ NUGET
     runtime.win-arm64.runtime.native.System.Data.SqlClient.sni (4.4) - restriction: || (&& (< monoandroid) (< monotouch) (< net451) (>= netstandard1.3) (< netstandard2.0) (< win81) (< wpa81) (< xamarinios) (< xamarinmac) (< xamarintvos) (< xamarinwatchos)) (&& (< net451) (>= netstandard2.0)) (>= netcoreapp2.0) (>= netcoreapp2.1)
     runtime.win-x64.runtime.native.System.Data.SqlClient.sni (4.4) - restriction: || (&& (< monoandroid) (< monotouch) (< net451) (>= netstandard1.3) (< netstandard2.0) (< win81) (< wpa81) (< xamarinios) (< xamarinmac) (< xamarintvos) (< xamarinwatchos)) (&& (< net451) (>= netstandard2.0)) (>= netcoreapp2.0) (>= netcoreapp2.1)
     runtime.win-x86.runtime.native.System.Data.SqlClient.sni (4.4) - restriction: || (&& (< monoandroid) (< monotouch) (< net451) (>= netstandard1.3) (< netstandard2.0) (< win81) (< wpa81) (< xamarinios) (< xamarinmac) (< xamarintvos) (< xamarinwatchos)) (&& (< net451) (>= netstandard2.0)) (>= netcoreapp2.0) (>= netcoreapp2.1)
-    Saturn (0.7.3)
+    Saturn (0.7.4)
       FSharp.Core (>= 4.2.3)
       Giraffe (>= 1.1)
       Microsoft.AspNetCore (>= 2.1)
